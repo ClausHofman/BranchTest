@@ -6,8 +6,9 @@
 from ipaddress import AddressValueError
 import winsound
 
-# Otetaan käyttöön oma funktiomoduli
+# Otetaan käyttöön oma funktiomoduli & kysymysmoduli
 import funktiot_moduli
+import kysymys
 
 def select_case(sanakirja, avain, oletus):
     """Muiden ohjelmointikielten Select-Case-rakennetta vastaava funktio
@@ -29,25 +30,25 @@ mittaustulokset = []
 
 # Ikuinen silmukka
 while True:
-    # Tätä toistetaan kunnes käyttäjä sulkee ohjelman
-    seina1 = float(input('Anna ensimmäisen seinän pituus: '))
-    seina2 = float(input('Anna toisen seinän pituus: '))
-    lavistaja = float(input('Anna ristimitta: '))
-    # TODO: lisää tähän kysymys mikä huonetyyppi on kyseessä
-    mittaustulokset.append(seina1)
-    mittaustulokset.append(seina2)
-    mittaustulokset.append(lavistaja)
+        seina1 = kysymys.kysy_liukuluku("Anna ensimmäisen seinän pituus metreinä ")
+        seina2 = kysymys.kysy_liukuluku("Anna toisen seinän pituus metreinä ")
+        lavistaja = kysymys.kysy_liukuluku("Anna ristimitta: ")
+    
+        # TODO: lisää tähän kysymys mikä huonetyyppi on kyseessä
+        mittaustulokset.append(seina1)
+        mittaustulokset.append(seina2)
+        mittaustulokset.append(lavistaja)
 
-    # TODO: Muuta, siten, että kertoo onko huonekohtaisten rajojen sisällä
-    # Kerrotaan onko tila suorakulmainen
-    print('Nurkka suorakulmainen', funktiot_moduli.suorakulma(
-        seina1, seina2, lavistaja))
+        # TODO: Muuta, siten, että kertoo onko huonekohtaisten rajojen sisällä
+        # Kerrotaan onko tila suorakulmainen
+        print('Ero suorakulmaan on', funktiot_moduli.suorakulma(
+            seina1, seina2, lavistaja))
 
-    # Kysytään käyttäjältä haluaako jatkaa
-    lopetetaan = input('Paina L, jos haluat lopettaa: ').upper()
+        # Kysytään käyttäjältä haluaako jatkaa
+        lopetetaan = input('Paina L, jos haluat lopettaa: ').upper()
 
-    if lopetetaan == 'L':
-        break
+        if lopetetaan == 'L':
+            break
 
 # Ohjelman suoritus päättyy
 
