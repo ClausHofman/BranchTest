@@ -10,7 +10,6 @@ def kysy_liukuluku(kysymys):
     Returns:
         float: Käyttäjän syöttämä arvo liukuluvuksi muutettuna
     """
-    # FIXME korjaa kysymyksestä puuttuva väli
     korjattu_kysymys = kysymys.strip() + ": "
     vastaus = input(korjattu_kysymys)
     try:
@@ -22,4 +21,3 @@ def kysy_liukuluku(kysymys):
     
     finally : 
         return arvo
-
