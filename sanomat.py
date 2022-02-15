@@ -60,10 +60,36 @@ def laske_varmiste(summa):
     varmiste = summa % 127
     return varmiste
 
+def lopullinen_sanoma(sanoma,varmiste):
+    """Koostaa lopullisen sanoman
+
+    Args:
+        sanoma (string): pituustiedot sisältävä merkkijono
+        varmiste (integer): varmiste
+
+    Returns:
+        string: kokonainen sanoma , jossa on alku- ja loppumerkit mukana
+    """
+    varmiste_str = str(varmiste)
+    sanoma = "<" + sanoma + varmiste_str + ">"
+    return sanoma
+
 # TODO: Yhdistä kaikki yhteen sanomaan eli alku- ja loppumerkit sekä varmiste tekstinä
 
 # TODO: Refaktoroi summaa_merkit() ja laske_varmiste() -funktiot yhdeksi funktioksi
 # siten, että jakaja on funktion toisena argumenttina
+def muodosta_varmiste(merkit, jakaja):
+    """_summary_
+
+    Args:
+        merkit (_type_): _description_
+        jakaja (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    varmiste = ""
+    return varmiste
 
 if __name__ == "__main__":
     merkkijono = muodosta_sanoma(3000,4000,5003,3)
@@ -72,3 +98,6 @@ if __name__ == "__main__":
     print("Merkkien summa on:",summa)
     varmiste = laske_varmiste(summa)
     print('Modulo 127 varmiste on', varmiste)
+    valmis_sanoma = lopullinen_sanoma(merkkijono, varmiste)
+    print("Valmis sanoma näyttää tältä", valmis_sanoma)
+    
