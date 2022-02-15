@@ -1,4 +1,5 @@
 # MODULI MITTAUSSANOMIEN KÄSITTELYYN
+#TODO: tee esimerkki siitä, miten rakennetaan sanoma
 
 # Sanoma koostuu alkumerkistä <, datasta, loppumerkistä > ja varmistussummasta
 # Varmistussumma lasketaan siten, että kirjainten ascii koodit
@@ -81,37 +82,15 @@ def lopullinen_sanoma(sanoma, varmiste):
 
 # TODO: Yhdistä kaikki yhteen sanomaan eli alku- ja loppumerkit sekä varmiste tekstinä
 
+# TODO: Refaktoroi summaa_merkit() ja laske_varmiste() -funktiot yhdeksi funktioksi
+# siten, että jakaja on funktion toisena argumenttina
 
-''' def muodosta_varmiste(merkit, jakaja):
-    """Muodostaa merkkijonosta varmisteen käyttäjän määrittelemällä jakajalla
-    Args:
-        merkit (string): merkkijono, josta jakojäännös lasketaan
-        jakaja (integer): jakaja
-    Returns:
-        string: jakojäännös merkkijonoksi muutettuna
-    """
-    summa = 0
-    for kirjain in merkit:
-        numeroarvo = ord(kirjain)
-        summa = summa + numeroarvo
-    jakojaannos = summa % jakaja
-    varmiste = str(jakojaannos)
-    return varmiste
- '''
-# Funktio hyödyntää aiemmin määriteltyjä funktioita 
-''' def muodosta_varmiste(merkit, jakaja):
-    summa = summaa_merkit(merkit)
-    varmiste = str(summa % jakaja)
-    return varmiste '''
-
-# Koodia voidaan edelleen tiivistää
+# Muodostetaan merkeistä varmiste valittua jakajaa käyttäen
 def muodosta_varmiste(merkit, jakaja):
     return str(summaa_merkit(merkit) % jakaja)
 
 
 if __name__ == "__main__":
-
-    # Testataan sanoman muodostamista
     merkkijono = muodosta_sanoma(3000,4000,5003,3)
     print(merkkijono)
     summa = summaa_merkit(merkkijono)
@@ -120,8 +99,3 @@ if __name__ == "__main__":
     print('Modulo 127 varmiste on', varmiste)
     valmis_sanoma = lopullinen_sanoma(merkkijono, varmiste)
     print('Valmis sanoma näyttää tältä', valmis_sanoma)
-
-    # Testataan sanoman purkamista
-    sanoman_pituus = len(valmis_sanoma)
-    paloteltu_sanoma = valmis_sanoma.split('|')
-    print (paloteltu_sanoma)
