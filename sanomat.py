@@ -19,7 +19,6 @@
 # Funktio, jolla muodostetaan sanoman sisältö
 def muodosta_sanoma(seina1, seina2, ristimitta, virhe):
     """Muodostaa merkkijonon sanomarakennetta varten
-
     Args:
         seina1 (float): ensimmäisen seinän pituus mm
         seina2 (float): toisen seinän pituus mm
@@ -34,7 +33,6 @@ def muodosta_sanoma(seina1, seina2, ristimitta, virhe):
 
 def muodosta_sanoma2(seina1, seina2, ristimitta, virhe):
     """Muodostaa merkkijonon sanomarakennetta varten
-
     Args:
         seina1 (float): ensimmäisen seinän pituus mm
         seina2 (float): toisen seinän pituus mm
@@ -105,6 +103,11 @@ def muodosta_varmiste(merkit, jakaja):
     return str(summaa_merkit(merkit) % jakaja)
 
 
+# Muodostetaan merkeistä varmiste valittua jakajaa käyttäen
+def muodosta_varmiste(merkit, jakaja):
+    return str(summaa_merkit(merkit) % jakaja)
+
+
 if __name__ == "__main__":
     # Testataan sanoman muodostamista
     merkkijono = muodosta_sanoma(3000,4000,5003,3)
@@ -114,6 +117,7 @@ if __name__ == "__main__":
     varmiste = laske_varmiste(summa)
     print('Modulo 127 varmiste on', varmiste)
     valmis_sanoma = lopullinen_sanoma(merkkijono, varmiste)
+    <<<<<<< HEAD
     print('Valmis sanoma näyttää tältä', valmis_sanoma)
         
     # Testataan sanoman purkamista
@@ -146,4 +150,3 @@ if __name__ == "__main__":
 
 # TODO: Rakenna purkutestin perusteella funktio ja tee sille testi
 # TODO: Refaktoroi koodia
-
