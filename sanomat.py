@@ -151,16 +151,16 @@ def pura_sanoma(sanoma,alkumerkki,loppumerkki,erotin, jakaja):
     return arvot
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-#     print ('Lähtevä sanoma näyttää tältä', lahteva_sanoma)
+    # print ('Lähtevä sanoma näyttää tältä', lahteva_sanoma)
 
-#     arvolista = pura_sanoma(lahteva_sanoma, '<', '>', '|', 127)
-#     print('Alkuperäisen sanoman arvot olivat', arvolista)
+    # arvolista = pura_sanoma(lahteva_sanoma, '<', '>', '|', 127)
+    # print('Alkuperäisen sanoman arvot olivat', arvolista)
 
     
 
-    """     # Testataan sanoman muodostamista
+    # Testataan sanoman muodostamista
     merkkijono = muodosta_sanoma(3000,4000,5003,3)
     print(merkkijono)
     summa = summaa_merkit(merkkijono)
@@ -192,7 +192,7 @@ def pura_sanoma(sanoma,alkumerkki,loppumerkki,erotin, jakaja):
     if (alkuperainen_tarkiste) == muodosta_varmiste(uudelleen_str, 127):
         print('Sanoma vahingoittumaton, varmiste tarkistettu')
     else:
-        print('Sanoma muuttunut tiedonsiirrossa!') """
+        print('Sanoma muuttunut tiedonsiirrossa!')
         
    
 
